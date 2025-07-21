@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "The Dino-Dex",
-  description: "Browse thousands of dinosaurs on The Dino-Dex, learn interesting facts and find thousands of images, articles and data about (almost) every dinosaur species.",
+  description:
+    "Browse thousands of dinosaurs on The Dino-Dex, learn interesting facts and find thousands of images, articles and data about (almost) every dinosaur species.",
 };
 
 export default function RootLayout({
