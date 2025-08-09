@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Archivo_Black, Space_Grotesk } from "next/font/google";
-import { Text } from "@/components/retroui/Text";
+import { Archivo_Black, Space_Grotesk, Tomorrow } from "next/font/google";
+import NavBar from "@/components/NavBar";
 
 const archivoBlack = Archivo_Black({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-head",
+  display: "swap",
+});
+
+const tomorrow = Tomorrow({
+  subsets: ["latin"],
+  weight: "800",
+  variable: "--font-logo",
   display: "swap",
 });
 
@@ -31,14 +38,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${archivoBlack.variable} ${space.variable} antialiased bg-gray-100`}
+        className={`${archivoBlack.variable} ${space.variable} ${tomorrow.variable} antialiased bg-gray-100`}
       >
         <div className="font-sans">
-          <div className="bg-emerald-500 w-full flex items-center justify-center py-3">
-            <Text as="h1" className="text-white text-3xl font-sans">
-              The Dino-Dex
-            </Text>
-          </div>
+          <NavBar />
           <div className="container mx-auto my-8 px-4">{children}</div>
         </div>
       </body>

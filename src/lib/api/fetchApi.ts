@@ -1,7 +1,6 @@
 import { PaginatedApiResponse, ApiResponse } from "@/types";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "https://api.thedinodex.com";
+const BASE_URL = process.env.API_BASE_URL || "https://api.thedinodex.com";
 
 export const fetchApi = async <T>(
   endpoint: string,
