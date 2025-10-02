@@ -1,7 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 Route::get('/', function () {
-    return ['Dinosaur-Api' => app()->version()];
+    return Inertia::render('Home', [
+        'appName' => config('app.name'),
+    ]);
+});
+
+Route::get('/info', function () {
+    phpinfo();
 });

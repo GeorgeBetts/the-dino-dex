@@ -1,0 +1,46 @@
+{
+    "name": "the-dino-dex",
+    "version": "1.0.0",
+    "description": "This is an API to get information about dinosaurs. The API was created using the Laravel framework.",
+    "main": "index.js",
+    "directories": {
+        "test": "tests"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview --port 5173 --strictPort",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/GeorgeBetts/the-dino-dex.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/GeorgeBetts/the-dino-dex/issues"
+    },
+    "homepage": "https://github.com/GeorgeBetts/the-dino-dex#readme",
+    "devDependencies": {
+        "@types/react": "^19.2.0",
+        "@types/react-dom": "^19.2.0",
+        "@typescript-eslint/eslint-plugin": "^8.45.0",
+        "@typescript-eslint/parser": "^8.45.0",
+        "@vitejs/plugin-react": "^5.0.4",
+        "eslint": "^9.36.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-react": "^7.37.5",
+        "eslint-plugin-react-hooks": "^6.1.0",
+        "laravel-vite-plugin": "^2.0.1",
+        "prettier": "^3.6.2",
+        "typescript": "^5.9.3",
+        "vite": "^7.1.8"
+    },
+    "dependencies": {
+        "@inertiajs/react": "^2.2.4",
+        "react": "^19.2.0",
+        "react-dom": "^19.2.0"
+    }
+}
