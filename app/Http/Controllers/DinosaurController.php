@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\DinosaurResource;
 use App\Models\Dinosaur;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\ResourceCollection;
-use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Inertia\Inertia;
+use Inertia\Response;
 
 class DinosaurController extends Controller
 {
@@ -15,7 +16,7 @@ class DinosaurController extends Controller
      *
      * @throws \Throwable
      */
-    public function index(Request $request): ResourceCollection
+    public function index(Request $request): Response
     {
         $dinosaurs = Dinosaur::with(['images', 'articles']);
 
@@ -43,7 +44,7 @@ class DinosaurController extends Controller
             $dinosaurs->hasArticles();
         }
 
-        return $dinosaurs->paginate(30)->toResourceCollection();
+        return Inertia::render('dinosaurs/index', ['dinosaurs' => $dinosaurs->paginate(30)->toResourceCollection()]);
     }
 
     /**
@@ -51,6 +52,8 @@ class DinosaurController extends Controller
      */
     public function show(Dinosaur $dinosaur): Response
     {
-        return response($dinosaur->load(['images', 'articles']));
+        $dinosaur = new DinosaurResource($dinosaur->load(['images', 'articles']));
+
+        return Inertia::render('dinosaurs/show', ['dinosaur' => $dinosaur]);
     }
 }
