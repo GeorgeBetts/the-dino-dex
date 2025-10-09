@@ -22,7 +22,7 @@ class DinosaurController extends Controller
 
         // Set whether searches on string fields will be 'like' or '=' (exact match)
         $whereOperator = 'like';
-        if ($request->boolean('exact_match', false) === true) {
+        if ($request->boolean('exact_match') === true) {
             $whereOperator = '=';
         }
 
@@ -32,15 +32,15 @@ class DinosaurController extends Controller
             $dinosaurs->where('name', $whereOperator, $nameSearch);
         }
 
-        if ($request->boolean('has_wikipedia_entry', false) === true) {
+        if ($request->boolean('has_wikipedia_entry') === true) {
             $dinosaurs->hasWikipediaEntry();
         }
 
-        if ($request->boolean('has_image', false) === true) {
+        if ($request->boolean('has_image') === true) {
             $dinosaurs->hasImages();
         }
 
-        if ($request->boolean('has_article', false) === true) {
+        if ($request->boolean('has_article') === true) {
             $dinosaurs->hasArticles();
         }
 

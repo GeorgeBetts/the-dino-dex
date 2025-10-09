@@ -33,16 +33,17 @@
 }
 
 :root {
-    --background: #fff;
+    --radius: 0;
+    --background: #f9f5f2;
     --foreground: #000;
     --card: #fff;
     --card-foreground: #000;
-    --primary: #ffdb33;
-    --primary-hover: #ffcc00;
-    --primary-foreground: #000;
+    --primary: #599d77;
+    --primary-hover: #39654c;
+    --primary-foreground: #fff;
     --secondary: #000;
-    --secondary-foreground: #fff;
-    --muted: #aeaeae;
+    --secondary-foreground: #000;
+    --muted: #cccccc;
     --muted-foreground: #5a5a5a;
     --accent: #fae583;
     --accent-foreground: #000;
@@ -56,8 +57,8 @@
     --foreground: #f5f5f5;
     --card: #242424;
     --card-foreground: #f5f5f5;
-    --primary: #ffdb33;
-    --primary-hover: #ffcc00;
+    --primary: #599d77;
+    --primary-hover: #39654c;
     --primary-foreground: #000;
     --secondary: #3a3a3a;
     --secondary-foreground: #f5f5f5;
@@ -67,15 +68,8 @@
     --accent-foreground: #000;
     --destructive: #e63946;
     --destructive-foreground: #fff;
-    --border: #3a3a3a;
+    --border: #5c5c5c;
 }
 
-@layer base {
-    * {
-        @apply border-border outline-ring/50;
-    }
 
-    body {
-        @apply bg-background text-foreground;
-    }
-}
+

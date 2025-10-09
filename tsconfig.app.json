@@ -1,9 +1,4 @@
 {
-    "references": [
-        {
-            "path": "./tsconfig.app.json"
-        }
-    ],
     "compilerOptions": {
         "target": "ES2022",
         "lib": [
