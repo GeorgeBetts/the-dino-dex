@@ -63,6 +63,6 @@ class DinosaurController extends Controller
     {
         $dinosaur = new DinosaurResource($dinosaur->load(['images', 'articles']));
 
-        return Inertia::render('dinosaurs/show', ['dinosaur' => $dinosaur]);
+        return Inertia::render('dinosaurs/Show', ['dinosaur' => $dinosaur]);
     }
 }
