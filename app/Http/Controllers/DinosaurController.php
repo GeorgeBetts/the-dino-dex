@@ -27,16 +27,16 @@ class DinosaurController extends Controller
         }
 
         // Filter on dinosaur name
-        if ($request->has('name')) {
-            $nameSearch = ($whereOperator === '=') ? $request->name : '%'.$request->name.'%';
-            $dinosaurs->where('name', $whereOperator, $nameSearch);
+        if ($request->has('search')) {
+            $searchString = ($whereOperator === '=') ? $request->search : '%'.$request->search.'%';
+            $dinosaurs->where('name', $whereOperator, $searchString);
         }
 
-        if ($request->boolean('has_wikipedia_entry') === true) {
+        if ($request->boolean('has_wikipedia_entry', true) === true) {
             $dinosaurs->hasWikipediaEntry();
         }
 
-        if ($request->boolean('has_image') === true) {
+        if ($request->boolean('has_image', true) === true) {
             $dinosaurs->hasImages();
         }
 
@@ -44,7 +44,16 @@ class DinosaurController extends Controller
             $dinosaurs->hasArticles();
         }
 
-        return Inertia::render('dinosaurs/index', ['dinosaurs' => $dinosaurs->paginate(30)->toResourceCollection()]);
+        $dinosaurs->orderBy('name');
+
+        return Inertia::render('dinosaurs/Index', [
+            'dinosaurs' => Inertia::scroll($dinosaurs->paginate(15)->toResourceCollection()),
+            'initialSearch' => $request->search,
+            'has_wikipedia_entry' => $request->has_wikipedia_entry,
+            'has_image' => $request->has_image,
+            'has_article' => $request->has_article,
+            'exact_match' => $request->exact_match,
+        ]);
     }
 
     /**

@@ -49,7 +49,7 @@ export function DinosaurCard({ dinosaur, className, href, onView, ...rest }: Din
             <div className="flex flex-col gap-3 p-4 grow">
                 <div>
                     <Text as="h4" className="text-emerald-800 font-semibold tracking-wide">
-                        {dinosaur.taxon}
+                        {dinosaur.name}
                     </Text>
                     {taxon && (
                         <Text as="p" className="text-muted-foreground italic text-sm">
