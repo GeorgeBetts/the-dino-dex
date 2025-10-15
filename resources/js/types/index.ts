@@ -6,6 +6,15 @@ export interface DinosaurImage {
     updated_at: string;
 }
 
+export interface DinosaurArticle {
+    id: string;
+    dinosaur_id: string;
+    title: string;
+    url: string;
+    created_at: string;
+    updated_at: string;
+}
+
 export interface Dinosaur {
     id: string;
     name: string;
@@ -18,7 +27,7 @@ export interface Dinosaur {
     created_at: string;
     updated_at: string;
     images: DinosaurImage[];
-    articles: unknown[];
+    articles: DinosaurArticle[];
     period_start_human_readable: string;
     period_start_years_ago: number;
     period_start_period: string;

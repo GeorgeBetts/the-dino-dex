@@ -20,7 +20,16 @@ class DinosaurResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            ...$this->resource->toArray(),
+            'id' => $this->id,
+            'name' => $this->name,
+            'taxon' => $this->taxon,
+            'period_start' => $this->period_start,
+            'period_end' => $this->period_end,
+            'size_comparison' => $this->size_comparison,
+            'wikidata_entry' => $this->wikidata_entry,
+            'wikipedia_entry' => $this->wikipedia_entry,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
             'images' => $this->whenLoaded('images'),
             'articles' => $this->whenLoaded('articles'),
             $this->mergeWhen($this->period_start !== null, function () {

@@ -33,12 +33,13 @@ function NavBar() {
                         ))}
                     </div>
                     <div className="flex items-center gap-4">
-                        <Button variant="outline" size="sm">
+                        <Button variant="outline" size="sm" asChild>
                             <a
                                 href="https://github.com/GeorgeBetts/the-dino-dex"
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 className="flex items-center gap-2"
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label="GitHub Link"
                             >
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"

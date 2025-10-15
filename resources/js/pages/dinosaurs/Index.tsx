@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Dinosaur, PaginatedResponse } from '@/types';
 import DinosaurCard from '@/components/DinosaurCard';
 import { motion } from 'motion/react';
@@ -15,6 +15,12 @@ export default function Index({
 }) {
     const [search, setSearch] = useState(initialSearch);
 
+    console.log(initialSearch);
+
+    useEffect(() => {
+        setSearch(initialSearch);
+    }, [initialSearch]);
+
     const onSearchChange = (value: string) => {
         setSearch(value);
 
@@ -29,8 +35,8 @@ export default function Index({
 
         router.visit('/', {
             data: Object.fromEntries(params.entries()),
-            only: ['dinosaurs'],
-            reset: ['dinosaurs'],
+            only: ['dinosaurs', 'initialSearch'],
+            reset: ['dinosaurs', 'initialSearch'],
             replace: true,
             preserveState: true,
         });

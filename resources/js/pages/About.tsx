@@ -10,14 +10,15 @@ export default function About() {
             <div className="container mx-auto px-4 py-8 flex justify-center">
                 <Card className="w-full max-w-3xl py-4">
                     <Card.Header className="text-center">
-                        <Card.Title as="h1" className="mb-4">
-                            About The Dino-Dex
+                        <Card.Title className="mb-4">
+                            <h1>About The Dino-Dex</h1>
                         </Card.Title>
                         <Card.Description className="max-w-2xl mx-auto">
                             <Text as="p" className="text-lg text-muted-foreground">
                                 Dino‑Dex lets you browse thousands of species of pre‑historic
                                 creatures. We collect images, articles, and facts from trusted
-                                sources so you can explore the ancient world in one place.
+                                sources so you can search, explore and learn about every species of
+                                dinosaur.
                             </Text>
                         </Card.Description>
                     </Card.Header>

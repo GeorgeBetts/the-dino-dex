@@ -59,9 +59,9 @@ class DinosaurController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Dinosaur $dinosaur): Response
+    public function show(Request $request, Dinosaur $dinosaur): Response
     {
-        $dinosaur = new DinosaurResource($dinosaur->load(['images', 'articles']));
+        $dinosaur = (new DinosaurResource($dinosaur->load(['images', 'articles'])))->resolve();
 
         return Inertia::render('dinosaurs/Show', ['dinosaur' => $dinosaur]);
     }
